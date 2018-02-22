@@ -100,7 +100,7 @@
       <AdditionalDependencies>ASC_CPP_MODEL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /d /y "$(OutDir)*.dll" "$(ProjectDir)..\\ASC_NET_GUI\bin\Debug\dll\"</Command>
+      <Command>xcopy /d /y "$(OutDir)*.dll" "$(ProjectDir)..\\ASC_NET_GUI\bin\Debug\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

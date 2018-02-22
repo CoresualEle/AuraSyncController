@@ -9,7 +9,7 @@ namespace ASC_NET_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        [DllImport("dll\\ASC_CPP_API.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("ASC_CPP_API.dll", CallingConvention = CallingConvention.Cdecl)]
         private static extern void Mb_SetStaticColor([MarshalAs(UnmanagedType.Struct)] ref ColorData resultStruct);
 
         public MainWindow()

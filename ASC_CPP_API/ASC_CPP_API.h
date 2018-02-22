@@ -8,4 +8,4 @@
 
 struct ColorData;
 
-extern "C" ASC_CPP_API void Mb_SetStaticColor(int r, int g, int b);
+extern "C" ASC_CPP_API void Mb_SetStaticColor(ColorData *colorData);
