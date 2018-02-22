@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <StackPanel>
+            <Button Click="ButtonBase_OnClick"
+                    Content="Farbe setzen!" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="R:" />
+                <TextBox x:Name="RedValue"
+                         Text="255"
+                         Width="20" />
+                <TextBlock Text="G:" />
+                <TextBox x:Name="GreenValue" 
+                         Text="0"
+                         Width="20" />
+                <TextBlock Text="B:" />
+                <TextBox x:Name="BlueValue" 
+                         Text="0"
+                         Width="20" />
+            </StackPanel>
+
+        </StackPanel>
+
     </Grid>
 </Window>

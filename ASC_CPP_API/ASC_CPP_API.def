@@ -1,0 +1,3 @@
+LIBRARY ASC_CPP_API
+EXPORTS
+	Mb_SetStaticColor @1

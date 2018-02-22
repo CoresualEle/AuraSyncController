@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ASC_NET_GUI
 {
@@ -20,9 +9,32 @@ namespace ASC_NET_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        [DllImport("dll\\ASC_CPP_API.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern void Mb_SetStaticColor([MarshalAs(UnmanagedType.Struct)] ref ColorData resultStruct);
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var colorData = new ColorData
+            {
+                r = Convert.ToInt32(RedValue.Text),
+                g = Convert.ToInt32(GreenValue.Text),
+                b = Convert.ToInt32(BlueValue.Text)
+            };
+
+            Mb_SetStaticColor(ref colorData);
+        }
+    }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
+    public struct ColorData
+    {
+        public int r;
+        public int g;
+        public int b;
     }
 }
